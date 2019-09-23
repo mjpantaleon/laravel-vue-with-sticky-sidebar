@@ -48,17 +48,11 @@ $(document).ready(function () {
     border: none;
 }
 
-.line {
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
-}
-
 .wrapper {
     display: flex;
     width: 100%;
     align-items: stretch;
+    
 }
 
 

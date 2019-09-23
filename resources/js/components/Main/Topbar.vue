@@ -22,6 +22,9 @@
                         <a class="nav-link" href="#"><i class="fa fa-envelope"></i>&nbsp;Leave a Message</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-info-circle"></i>&nbsp;News & Updates</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-key"></i>&nbsp;Login</a>
                     </li>
                 </ul>

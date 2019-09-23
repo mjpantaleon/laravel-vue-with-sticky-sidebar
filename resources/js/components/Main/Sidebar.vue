@@ -10,7 +10,10 @@
             </div>
             <!-- OPENING REMARKS -->
             <div class="row justify-content-center align-items-center">
-                <p class="text-white"><i>"Not a dumb doctor" <br>- Bobong Tagayuna, MD</i></p>
+                <blockquote class="blockquote">
+                    <p class="mb-0 text-white">"Not a dumb doctor"</p>
+                    <footer class="blockquote-footer text-white"><cite title="Source Title">Bobong Tagayuna, MD</cite></footer>
+                </blockquote>
             </div>
 
             <!-- NAVIGATIONS -->
@@ -31,6 +34,13 @@
                         <i class="fa fa-envelope"></i>
                         Leave a Message
                     </a>
+
+                    <a href="#">
+                        <i class="fa fa-info-circle"></i>
+                        News & Updates
+                    </a>
+
+                    <div class="line"></div>
 
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fa fa-copy"></i>
@@ -79,6 +89,13 @@ p {
     color: #999;
 }
 
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
 a,
 a:hover,
 a:focus {
@@ -91,11 +108,12 @@ a:focus {
 ----------------------------------------------------- */
 
 #sidebar {
-    min-width: 350px;
-    max-width: 350px;
+    min-width: 500px;
+    max-width: 500px;
     background: #a1bf7c;
     color: #fff;
     transition: all 0.3s;
+    
 }
 
 #sidebar.active {
@@ -133,11 +151,15 @@ a:focus {
 #sidebar ul.components {
     padding: 20px 0;
     /* border-bottom: 1px solid #4e8f00; */
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
 
 #sidebar ul p {
     color: #fff;
     padding: 10px;
+    
 }
 
 #sidebar ul li a {
@@ -227,7 +249,7 @@ a.article:hover {
 #sidebar.active .img-circle {
     display: none;
 }
-#sidebar.active p {
+#sidebar.active blockquote {
     display: none;
 }
 
