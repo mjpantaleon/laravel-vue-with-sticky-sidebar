@@ -12,20 +12,20 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"><i class="fa fa-home"></i>&nbsp;Home</a>
+                    <li class="nav-item">
+                        <router-link class="nav-link" :to="{ name: 'home' }"><i class="fa fa-home"></i>&nbsp;Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-user"></i>&nbsp;Register</a>
+                        <router-link class="nav-link" :to="{ name: 'register' }"><i class="fa fa-user-plus"></i>&nbsp;Register</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-envelope"></i>&nbsp;Leave a Message</a>
+                        <router-link class="nav-link" :to="{ name: 'message' }"><i class="fa fa-envelope"></i>&nbsp;Leave a Message</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-info-circle"></i>&nbsp;News & Updates</a>
+                        <router-link class="nav-link" :to="{ name: 'news' }"><i class="fa fa-info-circle"></i>&nbsp;News & Updates</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-key"></i>&nbsp;Login</a>
+                        <router-link class="nav-link" :to="{ name: 'login' }"><i class="fa fa-key"></i>&nbsp;Login</router-link>
                     </li>
                 </ul>
 
@@ -35,3 +35,12 @@
     </nav>
 
 </template>
+
+<style scoped>
+.navbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+</style>

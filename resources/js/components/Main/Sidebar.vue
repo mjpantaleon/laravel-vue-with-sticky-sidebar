@@ -19,26 +19,26 @@
             <!-- NAVIGATIONS -->
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#">
+                    <router-link :to="{ name: 'home' }">
                         <i class="fa fa-home"></i>
                         Home
-                    </a>
+                    </router-link>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-user"></i>
+                    <router-link :to="{ name: 'register'}">
+                        <i class="fa fa-user-plus"></i>
                         Register
-                    </a>
+                    </router-link>
 
-                    <a href="#">
+                    <router-link :to="{ name: 'message'}">
                         <i class="fa fa-envelope"></i>
                         Leave a Message
-                    </a>
+                    </router-link>
 
-                    <a href="#">
+                    <router-link :to="{ name: 'news' }">
                         <i class="fa fa-info-circle"></i>
                         News & Updates
-                    </a>
+                    </router-link>
 
                     <div class="line"></div>
 
@@ -74,8 +74,7 @@
 </script>
 
 <style scoped>
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+/* @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"; */
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -108,8 +107,8 @@ a:focus {
 ----------------------------------------------------- */
 
 #sidebar {
-    min-width: 500px;
-    max-width: 500px;
+    min-width: 450px;
+    max-width: 450px;
     background: #a1bf7c;
     color: #fff;
     transition: all 0.3s;
@@ -118,8 +117,8 @@ a:focus {
 
 #sidebar.active {
     /* margin-left: -250px; */
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 100px;
+    max-width: 100px;
     text-align: center;
 }
 
@@ -163,7 +162,7 @@ a:focus {
 }
 
 #sidebar ul li a {
-    padding: 10px;
+    padding:  10px 25px;
     font-size: 1.1em;
     display: block;
 }
@@ -254,8 +253,8 @@ a.article:hover {
 }
 
 .img-circle {
-    width:180px;
-    height:180px;
+    width:240px;
+    height:240px;
     background-size:cover;
     background-position:center;
     border-radius:50%;

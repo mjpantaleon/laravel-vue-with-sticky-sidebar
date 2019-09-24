@@ -14,6 +14,7 @@
         <style>
             body{
                 background: url("img/bg2.png") no-repeat;
+                /* background: url("img/bg.jpg") no-repeat; */
                 background-position: center;
                 background-attachment: fixed;
                 background-size: cover;

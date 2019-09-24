@@ -11,7 +11,13 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/* -------------------------------------------------------------
+  CUSTOM
+---------------------------------------------------------------- */
+
+
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 :root {
   --blue: #325D88;
   --indigo: #6610f2;
