@@ -15,18 +15,18 @@
                     <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'home' }"><i class="fa fa-home"></i>&nbsp;Home</router-link>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'register' }"><i class="fa fa-user-plus"></i>&nbsp;Register</router-link>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'message' }"><i class="fa fa-envelope"></i>&nbsp;Leave a Message</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'news' }"><i class="fa fa-info-circle"></i>&nbsp;News & Updates</router-link>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'login' }"><i class="fa fa-key"></i>&nbsp;Login</router-link>
-                    </li>
+                    </li> -->
                 </ul>
 
                 

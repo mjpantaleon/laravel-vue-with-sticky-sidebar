@@ -25,10 +25,10 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'register'}">
+                    <!-- <router-link :to="{ name: 'register'}">
                         <i class="fa fa-user-plus"></i>
                         Register
-                    </router-link>
+                    </router-link> -->
 
                     <router-link :to="{ name: 'message'}">
                         <i class="fa fa-envelope"></i>
