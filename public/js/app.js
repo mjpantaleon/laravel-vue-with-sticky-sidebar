@@ -38574,17 +38574,6 @@ var staticRenderFns = [
         _c("li", [
           _c(
             "a",
-            { attrs: { href: "http://vote.bobongmd.com/", target: "_blank" } },
-            [
-              _c("i", { staticClass: "fa fa-check-square" }),
-              _vm._v(" Voting & Canvassing System")
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
             { attrs: { href: "https://psp.com.ph/", target: "_blank" } },
             [
               _c("i", { staticClass: "fa fa-stethoscope" }),
@@ -38910,31 +38899,6 @@ var render = function() {
         )
       ],
       1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "jumbotron" },
-      [
-        _vm._m(2),
-        _vm._v(" "),
-        _c("div", { staticClass: "line" }),
-        _vm._v(" "),
-        _vm._m(3),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          {
-            staticClass: "btn btn-primary btn-lg",
-            attrs: { to: { name: "register" }, role: "button" }
-          },
-          [
-            _c("i", { staticClass: "fa fa-user-plus" }),
-            _vm._v(" \n            Register as User")
-          ]
-        )
-      ],
-      1
     )
   ])
 }
@@ -38957,28 +38921,6 @@ var staticRenderFns = [
     return _c("h1", { staticClass: "display-4" }, [
       _c("i", { staticClass: "fa fa-info-circle" }),
       _vm._v(" Notice")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", { staticClass: "display-4" }, [
-      _c("i", { staticClass: "fa fa-user-plus" }),
-      _vm._v(" Register")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "lead" }, [
-      _vm._v(
-        "I encourage all new comers, friends, specially my students to register to gain access to the exclusive contents of this site.\n            "
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v("Please do note the all user registry is subjected for approval. ")
     ])
   }
 ]

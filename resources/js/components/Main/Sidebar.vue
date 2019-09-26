@@ -52,10 +52,10 @@
                                 <i class="fa fa-heartbeat"></i>&nbsp;
                                 Bobong tagayuna - Life Coach</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="http://vote.bobongmd.com/" target="_blank"><i class="fa fa-check-square">
                                 </i>&nbsp;Voting & Canvassing System</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="https://psp.com.ph/" target="_blank">
                                 <i class="fa fa-stethoscope"></i>&nbsp;
