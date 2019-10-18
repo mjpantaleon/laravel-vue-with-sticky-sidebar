@@ -2058,6 +2058,16 @@ $(document).ready(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -38745,106 +38755,77 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("form", { attrs: { method: "POST", action: "" } }, [
-      _c("div", { staticClass: "jumbotron" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { staticClass: "line" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "input-group" }, [
-          _vm._m(2),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.email,
-                expression: "email"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              placeholder: "sample_email@gmail.com",
-              "aria-label": "email",
-              "aria-describedby": "basic-addon1",
-              required: ""
-            },
-            domProps: { value: _vm.email },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.email = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _vm._m(3),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "btn btn-warning btn-lg",
-          attrs: { type: "submit", value: "SEND MESSAGE" }
-        })
-      ])
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ol", { staticClass: "breadcrumb" }, [
-      _c("li", { staticClass: "breadcrumb-item active" }, [
-        _c("i", { staticClass: "fa fa-envelope" }),
-        _vm._v(" Leave a Message")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", { staticClass: "display-4" }, [
-      _c("i", { staticClass: "fa fa-envelope" }),
-      _vm._v(" Leave a Message")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-prepend" }, [
-      _c(
-        "span",
-        { staticClass: "input-group-text", attrs: { id: "basic-addon1" } },
-        [_c("i", { staticClass: "fa fa-at" }), _vm._v(" \n                ")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", { attrs: { for: "exampleTextarea" } }, [_vm._v(" ")]),
+    return _c("div", [
+      _c("ol", { staticClass: "breadcrumb" }, [
+        _c("li", { staticClass: "breadcrumb-item active" }, [
+          _c("i", { staticClass: "fa fa-envelope" }),
+          _vm._v(" Leave a Message")
+        ])
+      ]),
       _vm._v(" "),
-      _c("textarea", {
-        staticClass: "form-control",
-        attrs: {
-          id: "exampleTextarea",
-          rows: "10",
-          placeholder: "Input your message here...",
-          required: ""
-        }
-      })
+      _c("form", { attrs: { method: "POST", action: "" } }, [
+        _c("div", { staticClass: "jumbotron" }, [
+          _c("h1", { staticClass: "display-4" }, [
+            _c("i", { staticClass: "fa fa-envelope" }),
+            _vm._v(" Leave a Message")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "line" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "input-group" }, [
+            _c("div", { staticClass: "input-group-prepend" }, [
+              _c(
+                "span",
+                {
+                  staticClass: "input-group-text",
+                  attrs: { id: "basic-addon1" }
+                },
+                [
+                  _c("i", { staticClass: "fa fa-at" }),
+                  _vm._v(" \n                ")
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                placeholder: "sample_email@gmail.com",
+                "aria-label": "email",
+                "aria-describedby": "basic-addon1",
+                required: ""
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "exampleTextarea" } }, [_vm._v(" ")]),
+            _vm._v(" "),
+            _c("textarea", {
+              staticClass: "form-control",
+              attrs: {
+                id: "exampleTextarea",
+                rows: "10",
+                placeholder: "Input your message here...",
+                required: ""
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "btn btn-warning btn-lg",
+            attrs: { type: "submit", value: "SEND MESSAGE" }
+          })
+        ])
+      ])
     ])
   }
 ]

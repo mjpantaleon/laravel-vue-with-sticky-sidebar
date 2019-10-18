@@ -7,6 +7,16 @@
 
         <!-- MESSAGE DIV -->
         <form method="POST" action="">
+
+        <!-- @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif -->
         <div class="jumbotron">
             <h1 class="display-4">
                 <i class="fa fa-envelope"></i>&nbsp;Leave a Message</h1>
@@ -18,7 +28,7 @@
                         <i class="fa fa-at"></i>&nbsp;
                     </span>
                 </div>
-                <input type="text" class="form-control" placeholder="sample_email@gmail.com" aria-label="email" aria-describedby="basic-addon1" v-model="email" required>
+                <input type="text" class="form-control" placeholder="sample_email@gmail.com" aria-label="email" aria-describedby="basic-addon1" required>
             </div>
 
             <div class="form-group">
