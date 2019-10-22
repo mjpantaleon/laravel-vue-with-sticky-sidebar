@@ -6,7 +6,8 @@ import Vuex from 'vuex';
 import Home from './components/Home.vue';
 import NewsAndUpdate from './components/NewsAndUpdate.vue';
 import Register from './components/Register.vue';
-import Message from './components/Message.vue';
+import LeaveMessage from './components/LeaveMessage.vue';
+import ReceivedMessage from './components/LeaveMessage/ReceivedMessage.vue';
 
 // use vuex and vue-router
 Vue.use(VueRouter, Vuex);
@@ -18,6 +19,8 @@ export default new VueRouter({
         { path: '/', component: Home, name: 'home' },
         { path: '/news', component: NewsAndUpdate, name: 'news' },
         { path: '/register', component: Register, name: 'register' },
-        { path: '/message', component: Message, name: 'message' },
+        { path: '/leave-message', component: LeaveMessage, name: 'message' },
+        { path: '/message-received', component: ReceivedMessage, name: 'received-message' },
+        // { path: '/received', component: Received, name: 'received' },
     ]
 })

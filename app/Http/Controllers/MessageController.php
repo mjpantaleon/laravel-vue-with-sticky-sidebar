@@ -19,7 +19,8 @@ class MessageController extends Controller
         $message = Message::create($validatedData); 
 
         return response([
-            'message' => $message
+            'message' => $message,
+            'status' => 'OK'
         ]);
 
     }

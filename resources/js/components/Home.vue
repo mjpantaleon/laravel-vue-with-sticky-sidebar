@@ -10,7 +10,8 @@
                 <!-- <img class="float-right" src="img/bobongmd-icon-black.png" width="260px" alt=""> -->
                 <i class="fa fa-calendar"></i>&nbsp;Bulletin</h1>
             <div class="line"></div>
-            <p class="lead">Welcome! You have arrived at BobongMD's Official page. <br>Feel free to browse the contents of this site.</p>
+            <!-- <p class="lead">Welcome! You have arrived at BobongMD's Official page. <br>Feel free to browse the contents of this site.</p> -->
+            <p class="lead">{{ displayMsg }}</p>
         </div>
 
         <div class="jumbotron">
@@ -42,7 +43,7 @@
             <h1 class="display-4">
                 <i class="fa fa-eye"></i>&nbsp;Page Views</h1>
             <div class="line"></div>
-            <p class="lead">0</p>
+            <p class="lead"></p>
         </div>
 
 
@@ -50,7 +51,13 @@
 </template>
 
 <script>
-
+export default{
+    computed : {
+        displayMsg(){
+            return this.$store.getters.getWelcomeMsg
+        }
+    },
+}
 
 </script>
 
