@@ -12,7 +12,7 @@ class MessageController extends Controller
         
         $validatedData = $request->validate([
             'email' => 'email|required',
-            'message' => 'required|min:5',     
+            'message' => 'required|min:15',     
         ]);
         
         // User model instance

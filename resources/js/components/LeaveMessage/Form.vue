@@ -18,14 +18,15 @@
                         <i class="fa fa-at"></i>&nbsp;
                     </span>
                 </div>
-                <input type="email" class="form-control" v-model="email" name="email" id="email" placeholder="sample_email@gmail.com" aria-label="email" aria-describedby="basic-addon1" required>
-                <div v-if="errors && errors.email" class="text-danger">{{ errors.email[0] }}</div>
+                <input type="email" class="form-control" v-model="email" name="email" id="email" placeholder="sample_email@gmail.com" 
+                    aria-label="email" aria-describedby="basic-addon1" required>
+                <div v-if="errors && errors.email" class="text-danger"><strong>{{ errors.email[0] }}</strong></div>
             </div>
 
             <div class="form-group">
                 <label for="message">&nbsp;</label>
                 <textarea class="form-control" v-model="message" name="message" id="message" rows="10" placeholder="Input your message here..." required></textarea>
-                <div v-if="errors && errors.message" class="text-danger">{{ errors.message }}</div>
+                <div v-if="errors && errors.message" class="text-danger"><strong>{{ errors.message[0] }}</strong></div>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-envelope"></i>&nbsp;SEND MESSAGE</button>
@@ -49,8 +50,7 @@ export default {
             email : '',
             message : '',
             done : false,
-            // fields : {},
-            errors : null
+            errors : '',
         }
     },
     computed : mapState([
@@ -72,9 +72,8 @@ export default {
                 // console.log();
             })
             .catch(errors => {
-                this.errors = errors.response.data
-
-                console.log(errors.response.data)
+                this.errors = errors.response.data.errors
+                console.log(errors.response.data.errors)
             })
 
         },

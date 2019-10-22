@@ -2029,6 +2029,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 // fetch state in our vuex (store.js)
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2037,8 +2038,7 @@ __webpack_require__.r(__webpack_exports__);
       email: '',
       message: '',
       done: false,
-      // fields : {},
-      errors: null
+      errors: ''
     };
   },
   computed: Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])([// 'welcomeMsg'
@@ -2066,8 +2066,8 @@ __webpack_require__.r(__webpack_exports__);
         // console.log();
 
       })["catch"](function (errors) {
-        _this.errors = errors.response.data;
-        console.log(errors.response.data);
+        _this.errors = errors.response.data.errors;
+        console.log(errors.response.data.errors);
       });
     } // end leaveMsg()
 
@@ -2290,7 +2290,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      fname: '',
+      mname: '',
+      lname: '',
+      email: '',
+      username: '',
+      password: '',
+      errors: ''
+    };
+  },
+  methods: {
+    register: function register() {
+      var _this = this;
+
+      var fname = this.fname,
+          mname = this.mname,
+          lname = this.lname,
+          email = this.email,
+          username = this.username,
+          password = this.password,
+          errors = this.errors; //dispatch an action call REGISTER
+
+      this.$store.dispatch("REGISTER", {
+        fname: fname,
+        mname: mname,
+        lname: lname,
+        email: email,
+        username: username,
+        password: password
+      }).then(function (_ref) {
+        var data = _ref.data;
+        // clear fields
+        _this.fname = '';
+        _this.mname = '';
+        _this.lname = '';
+        _this.email = '';
+        _this.username = '';
+        _this.password = ''; // console log
+
+        console.log();
+      })["catch"](function (errors) {
+        _this.errors = errors.response.data.errors;
+        console.log(errors.response.data.errors);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -38815,7 +38869,7 @@ var render = function() {
             _vm._v(" "),
             _vm.errors && _vm.errors.email
               ? _c("div", { staticClass: "text-danger" }, [
-                  _vm._v(_vm._s(_vm.errors.email[0]))
+                  _c("strong", [_vm._v(_vm._s(_vm.errors.email[0]))])
                 ])
               : _vm._e()
           ]),
@@ -38853,7 +38907,7 @@ var render = function() {
             _vm._v(" "),
             _vm.errors && _vm.errors.message
               ? _c("div", { staticClass: "text-danger" }, [
-                  _vm._v(_vm._s(_vm.errors.message))
+                  _c("strong", [_vm._v(_vm._s(_vm.errors.message[0]))])
                 ])
               : _vm._e()
           ]),
@@ -39521,6 +39575,7 @@ var render = function() {
               staticClass: "form-control",
               attrs: {
                 type: "text",
+                name: "fname",
                 "aria-label": "First name",
                 placeholder: "First Name",
                 required: ""
@@ -39548,6 +39603,7 @@ var render = function() {
               staticClass: "form-control",
               attrs: {
                 type: "text",
+                name: "mname",
                 "aria-label": "Middle name",
                 placeholder: "Middle Initial/ Name",
                 required: ""
@@ -39575,6 +39631,7 @@ var render = function() {
               staticClass: "form-control",
               attrs: {
                 type: "text",
+                name: "lname",
                 "aria-label": "Last name",
                 placeholder: "Last Name",
                 required: ""
@@ -39591,6 +39648,24 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
+          _vm.errors && _vm.errors.fname
+            ? _c("div", { staticClass: "text-danger" }, [
+                _c("strong", [_vm._v(_vm._s(_vm.errors.fname[0]))])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.errors && _vm.errors.mname
+            ? _c("div", { staticClass: "text-danger" }, [
+                _c("strong", [_vm._v(_vm._s(_vm.errors.mname[0]))])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.errors && _vm.errors.lname
+            ? _c("div", { staticClass: "text-danger" }, [
+                _c("strong", [_vm._v(_vm._s(_vm.errors.lname[0]))])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
           _c("div", { staticClass: "input-group mt-3" }, [
             _vm._m(2),
             _vm._v(" "),
@@ -39605,7 +39680,7 @@ var render = function() {
               ],
               staticClass: "form-control col-7",
               attrs: {
-                type: "text",
+                type: "email",
                 placeholder: "sample.email@gmail.com",
                 "aria-label": "email",
                 "aria-describedby": "basic-addon1",
@@ -39622,6 +39697,12 @@ var render = function() {
               }
             })
           ]),
+          _vm._v(" "),
+          _vm.errors && _vm.errors.email
+            ? _c("div", { staticClass: "text-danger" }, [
+                _c("strong", [_vm._v(_vm._s(_vm.errors.email[0]))])
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c("div", { staticClass: "line" }),
           _vm._v(" "),
@@ -39661,6 +39742,12 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
+          _vm.errors && _vm.errors.username
+            ? _c("div", { staticClass: "text-danger" }, [
+                _c("strong", [_vm._v(_vm._s(_vm.errors.username[0]))])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
           _c("div", { staticClass: "input-group mt-3" }, [
             _vm._m(4),
             _vm._v(" "),
@@ -39692,6 +39779,12 @@ var render = function() {
               }
             })
           ]),
+          _vm._v(" "),
+          _vm.errors && _vm.errors.password
+            ? _c("div", { staticClass: "text-danger" }, [
+                _c("strong", [_vm._v(_vm._s(_vm.errors.password[0]))])
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _vm._m(5)
         ])
@@ -56812,7 +56905,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-var _mutations;
+var _mutations, _actions;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -56828,7 +56921,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     // data
     welcomeMsg: 'Welcome! You have arrived at BobongMD\'s Official page. Feel free to browse the contents of this site.',
     status: '',
-    message: ''
+    message: '',
+    user: ''
   },
   getters: {
     // getter method
@@ -56843,8 +56937,15 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     state.message = payload;
   }), _defineProperty(_mutations, "LEAVE_MESSAGE_ERROR", function LEAVE_MESSAGE_ERROR(state) {
     state.status = 'error';
+  }), _defineProperty(_mutations, "REGISTER_REQUEST", function REGISTER_REQUEST(state) {
+    state.status = 'loading';
+  }), _defineProperty(_mutations, "REGISTER_SUCCESS", function REGISTER_SUCCESS(state, payload) {
+    state.status = 'success';
+    state.user = payload;
+  }), _defineProperty(_mutations, "REGISTER_FAILED", function REGISTER_FAILED(state) {
+    state.status = 'failed';
   }), _mutations),
-  actions: _defineProperty({}, "LEAVE_MESSAGE", function LEAVE_MESSAGE(_ref, message) {
+  actions: (_actions = {}, _defineProperty(_actions, "LEAVE_MESSAGE", function LEAVE_MESSAGE(_ref, message) {
     var commit = _ref.commit,
         dispatch = _ref.dispatch;
     //returns a promis
@@ -56864,12 +56965,36 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 
         commit("LEAVE_MESSAGE_SUCCESS", response);
         resolve(response);
-      })["catch"](function (err) {
-        commit("LEAVE_MESSAGE_ERROR", err);
-        reject(err);
+      })["catch"](function (error) {
+        commit("LEAVE_MESSAGE_ERROR", error);
+        reject(error);
       });
     }); // end new Promise
-  })
+  }), _defineProperty(_actions, "REGISTER", function REGISTER(_ref2, user) {
+    var commit = _ref2.commit,
+        dispatch = _ref2.dispatch;
+    return new Promise(function (resolve, reject) {
+      commit("REGISTER_REQUEST");
+      axios__WEBPACK_IMPORTED_MODULE_2___default()({
+        url: 'api/register',
+        data: user,
+        method: 'POST'
+      }).then(function (response) {
+        // if the response has errors then
+        if (response.data.status != 'OK') {
+          return;
+        } // if no errors then
+        // commit a mutation called:
+
+
+        commit("REGISTER_SUCCESS", response);
+        resolve(response);
+      })["catch"](function (error) {
+        commit("REGISTER_FAILED", error);
+        reject(error);
+      });
+    });
+  }), _actions)
 }));
 
 /***/ }),

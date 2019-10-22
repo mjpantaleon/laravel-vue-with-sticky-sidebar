@@ -11,8 +11,9 @@ export default new Vuex.Store({
     state: {
         // data
         welcomeMsg : 'Welcome! You have arrived at BobongMD\'s Official page. Feel free to browse the contents of this site.',
-        status: '',
-        message: '',
+        status : '',
+        message : '',
+        user : '',
 
     },
 
@@ -34,7 +35,19 @@ export default new Vuex.Store({
         },
         ["LEAVE_MESSAGE_ERROR"]: (state) => {
             state.status = 'error'
-        }
+        },
+
+        // REGISTER
+        ["REGISTER_REQUEST"] : (state) => {
+            state.status = 'loading'
+        },
+        ["REGISTER_SUCCESS"] : (state, payload) => {
+            state.status = 'success'
+            state.user = payload
+        },
+        ["REGISTER_FAILED"]: (state) => {
+            state.status = 'failed'
+        },
     },
 
     actions: {
@@ -45,7 +58,6 @@ export default new Vuex.Store({
                 commit("LEAVE_MESSAGE_REQUEST")
                 axios({ url : 'api/message', data : message, method : 'POST' })
                 .then(response => {
-                    
                     // if the response has errors then
                     if(response.data.status != 'OK'){
                         return
@@ -56,12 +68,34 @@ export default new Vuex.Store({
                     commit("LEAVE_MESSAGE_SUCCESS", response)
                     resolve(response)
                 })
-                .catch(err => {
-                    commit("LEAVE_MESSAGE_ERROR",err)
-                    reject(err)
+                .catch(error => {
+                    commit("LEAVE_MESSAGE_ERROR",error)
+                    reject(error)
                 })
             })// end new Promise
-        }//end leave_message
+        },  //end leave_message
+
+        // REGISTER
+        ["REGISTER"] : ({commit, dispatch}, user) => {
+            return new Promise((resolve, reject) => {
+                commit("REGISTER_REQUEST")
+                axios({ url : 'api/register', data : user, method : 'POST'})
+                .then(response => {
+                    // if the response has errors then
+                    if(response.data.status != 'OK'){
+                        return
+                    }
+                    // if no errors then
+                    // commit a mutation called:
+                    commit("REGISTER_SUCCESS", response)
+                    resolve(response)
+                })
+                .catch(error => {
+                    commit("REGISTER_FAILED",error)
+                    reject(error)
+                })
+            })
+        }, // REGISTER
     }
 
 

@@ -11,10 +11,12 @@ class AuthController extends Controller
     public function register(Request $request){
         // validation instance
         $validatedData = $request->validate([
-            'name' => 'required|max:55',
+            'fname' => 'required|max:30|min:2',
+            'mname' => 'required|max:30|min:2',
+            'lname' => 'required|max:30|min:2',
             'email' => 'email|required|unique:users',
-            'username' => 'required|unique:users',
-            'password' => 'required',
+            'username' => 'required|unique:users|min:5',
+            'password' => 'required|min:8',
         // *if you want a confirmed password field 
             // 'password' => 'required|confirmed'     
         ]);
@@ -33,7 +35,8 @@ class AuthController extends Controller
         // this will hold our user object
             // 'user' => $user,
             // this will hold our token
-            'access_token' => $accessToken
+            'access_token' => $accessToken,
+            'status' => 'OK'
         ]);
     }
 
