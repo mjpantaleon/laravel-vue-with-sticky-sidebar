@@ -40,6 +40,11 @@
                         News & Updates
                     </router-link>
 
+                    <router-link :to="{ name: 'terms-and-conditions' }">
+                        <i class="fa fa-user-secret"></i>
+                        Terms & Conditions
+                    </router-link>
+
                     <div class="line"></div>
 
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">

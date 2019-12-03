@@ -86,15 +86,18 @@ export default {
                 fname, mname, lname, email, username, password
             })
             .then(({data}) => {
-                // clear fields
-                this.fname = ''
-                this.mname = ''
-                this.lname = ''
-                this.email = ''
-                this.username = ''
-                this.password = ''
-                // console log
-                console.log();
+                 //redirect to register success page
+                this.$router.push({ name : 'register-success' })
+                
+                // // clear fields
+                // this.fname = ''
+                // this.mname = ''
+                // this.lname = ''
+                // this.email = ''
+                // this.username = ''
+                // this.password = ''
+                // // console log
+                // console.log();
             })
             .catch(errors => {
                 this.errors = errors.response.data.errors

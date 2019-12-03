@@ -24,6 +24,9 @@
                     <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'news' }"><i class="fa fa-info-circle"></i>&nbsp;News & Updates</router-link>
                     </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" :to="{ name: 'terms-and-conditions' }"><i class="fa fa-user-secret"></i>&nbsp;Terms & Conditions</router-link>
+                    </li>
                     <!-- <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'login' }"><i class="fa fa-key"></i>&nbsp;Login</router-link>
                     </li> -->
